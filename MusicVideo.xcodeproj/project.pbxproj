@@ -97,12 +97,10 @@
 		3DD0FE0E1CE5FD9B00CFB62E /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
-				3DD0FE0F1CE5FD9B00CFB62E /* AppDelegate.swift */,
-				3DD0FE111CE5FD9B00CFB62E /* ViewController.swift */,
-				3DD0FE131CE5FD9B00CFB62E /* Main.storyboard */,
-				3DD0FE161CE5FD9B00CFB62E /* Assets.xcassets */,
-				3DD0FE181CE5FD9B00CFB62E /* LaunchScreen.storyboard */,
-				3DD0FE1B1CE5FD9B00CFB62E /* Info.plist */,
+				3DD0FE421CE5FEC400CFB62E /* Supporting Files */,
+				3DD0FE3F1CE5FE8700CFB62E /* Model */,
+				3DD0FE401CE5FE9700CFB62E /* Controller */,
+				3DD0FE411CE5FEAC00CFB62E /* View */,
 			);
 			path = MusicVideo;
 			sourceTree = "<group>";
@@ -123,6 +121,40 @@
 				3DD0FE311CE5FD9B00CFB62E /* Info.plist */,
 			);
 			path = MusicVideoUITests;
+			sourceTree = "<group>";
+		};
+		3DD0FE3F1CE5FE8700CFB62E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3DD0FE401CE5FE9700CFB62E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DD0FE111CE5FD9B00CFB62E /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3DD0FE411CE5FEAC00CFB62E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DD0FE181CE5FD9B00CFB62E /* LaunchScreen.storyboard */,
+				3DD0FE131CE5FD9B00CFB62E /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3DD0FE421CE5FEC400CFB62E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DD0FE1B1CE5FD9B00CFB62E /* Info.plist */,
+				3DD0FE161CE5FD9B00CFB62E /* Assets.xcassets */,
+				3DD0FE0F1CE5FD9B00CFB62E /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +226,11 @@
 					3DD0FE0B1CE5FD9B00CFB62E = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 3MUYJVU39C;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					3DD0FE1F1CE5FD9B00CFB62E = {
 						CreatedOnToolsVersion = 7.3.1;
