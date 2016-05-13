@@ -21,12 +21,10 @@ class ViewController: UIViewController {
        
         let alert = UIAlertController(title: result, message: nil, preferredStyle: .Alert)
         let ok = UIAlertAction(title: "OK", style: .Default) { (action) in
-            
         }
         
         alert.addAction(ok)
-        self.presentViewController(alert, animated: true) { 
-            
+        self.presentViewController(alert, animated: true) {
         }
     }
 }
