@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         
         alert.addAction(ok)
         self.presentViewController(alert, animated: true) {
+            let music = Videos(data: result)
+            print(music)
         }
     }
 }

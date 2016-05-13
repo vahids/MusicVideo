@@ -25,7 +25,7 @@ class APIManager{
             } else { // Got data from api successfully!
                 
                 do{
-                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? [String: AnyObject] {
+                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? JSONDictionaty {
                         print(json)
                         
                         let priority = DISPATCH_QUEUE_PRIORITY_HIGH
