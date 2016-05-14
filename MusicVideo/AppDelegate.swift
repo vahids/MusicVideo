@@ -8,7 +8,7 @@
 
 import UIKit
 var reachablity: Reachability?
-var reachabilityStatus = WIFI
+var reachabilityStatus = NOACCESS
 
 
 @UIApplicationMain
@@ -24,6 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         internetCheck = Reachability.reachabilityForInternetConnection()
         internetCheck?.startNotifier()
+        
+        //first time run check for reachability
+        switch internetCheck?.currentReachabilityStatus().rawValue {
+        case NotReachable.rawValue?: reachabilityStatus = NOACCESS
+        case ReachableViaWiFi.rawValue?: reachabilityStatus = WIFI
+        case ReachableViaWWAN.rawValue?: reachabilityStatus = WWAN
+        default:
+            reachabilityStatus = NOACCESS
+        }
         
         return true
     }
@@ -44,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
+        print(reachabilityStatus)
         NSNotificationCenter.defaultCenter().postNotificationName("ReachStatusChanged", object: nil)
     }
     
