@@ -26,13 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         internetCheck?.startNotifier()
         
         //first time run check for reachability
-        switch internetCheck?.currentReachabilityStatus().rawValue {
-        case NotReachable.rawValue?: reachabilityStatus = NOACCESS
-        case ReachableViaWiFi.rawValue?: reachabilityStatus = WIFI
-        case ReachableViaWWAN.rawValue?: reachabilityStatus = WWAN
-        default:
-            reachabilityStatus = NOACCESS
-        }
+//        switch internetCheck?.currentReachabilityStatus().rawValue {
+//        case NotReachable.rawValue?: reachabilityStatus = NOACCESS
+//        case ReachableViaWiFi.rawValue?: reachabilityStatus = WIFI
+//        case ReachableViaWWAN.rawValue?: reachabilityStatus = WWAN
+//        default:
+//            reachabilityStatus = NOACCESS
+//        }
+        
+        self.statusChangedWithReachability(internetCheck!)
         
         return true
     }
