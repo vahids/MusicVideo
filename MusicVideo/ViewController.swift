@@ -12,22 +12,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let api = APIManager()
         api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=10/json", completion: self.didLoadData)
     }
 
-    func didLoadData(result: String){
-       
-        let alert = UIAlertController(title: result, message: nil, preferredStyle: .Alert)
-        let ok = UIAlertAction(title: "OK", style: .Default) { (action) in
+    func didLoadData(videos: [Videos]){
+//        for item in videos {
+//            print("name = \(item.videoArtist)")
+//        }
+        
+        for (index, item) in videos.enumerate() {
+            print("\(index). Name: \(item.videoName)")
         }
         
-        alert.addAction(ok)
-        self.presentViewController(alert, animated: true) {
-            let music = Videos(data: result)
-            print(music)
-        }
     }
 }
 

@@ -10,36 +10,43 @@ import Foundation
 
 class APIManager{
     
-    func loadData(urlString: String, completion: (result: String) -> Void) {
+    
+    func loadData(urlString: String, completion: [Videos] -> Void) {
         
         // Stop caching URL
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+        
         let session = NSURLSession(configuration: config)
         let url = NSURL(string: urlString)!
         
         let task = session.dataTaskWithURL(url) { (data, response, error) in
             if error != nil {
-                dispatch_async(dispatch_get_main_queue()){
-                    completion(result: error!.localizedDescription)
-                }
+                 print(error!.localizedDescription)
+                
             } else { // Got data from api successfully!
                 
                 do{
-                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? JSONDictionaty {
-                        print(json)
+                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? JSONDictionaty,
+                        feed = json["feed"] as? JSONDictionaty,
+                        entries = feed["entry"] as? JSONArray  {
+                        
+                        var videos = [Videos]()
+                        for entry in entries {
+                            let entry = Videos(data: entry as! JSONDictionaty)
+                            videos.append(entry)
+                        }
+                        
                         
                         let priority = DISPATCH_QUEUE_PRIORITY_HIGH
                         dispatch_async(dispatch_get_global_queue(priority, 0)){
                             dispatch_async(dispatch_get_main_queue()){
-                                completion(result: "Convert data to JSON successfuly")
+                                completion(videos)
                             }
                         }
                     }
                     
                 } catch {
-                    dispatch_async(dispatch_get_main_queue()){
-                        completion(result: "Error in converting data to JSON")
-                    }
+                    print("Error in JSONSerialization") 
                 }
             }
         }
