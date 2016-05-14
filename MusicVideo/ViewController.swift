@@ -22,6 +22,8 @@ class ViewController: UIViewController {
 //            print("name = \(item.videoArtist)")
 //        }
         
+        print(reachabilityStatus)
+        
         for (index, item) in videos.enumerate() {
             print("\(index). Name: \(item.videoName)")
         }
