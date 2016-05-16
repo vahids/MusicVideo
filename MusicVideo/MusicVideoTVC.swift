@@ -18,10 +18,10 @@ class MusicVideoTVC: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reachabilityStatusChanged), name: "ReachStatusChanged", object: nil)
         self.reachabilityStatusChanged()
         
-        initApi()
+        loadAPI()
     }
     
-    func initApi(){
+    func loadAPI(){
         let api = APIManager()
         api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json", completion: self.didLoadData)
     }
@@ -42,18 +42,47 @@ class MusicVideoTVC: UITableViewController {
         
     }
     
+    func displayNoConnectionAlert(){
+        let noConnectionAlert = UIAlertController(title: "No Internet Access", message: "Please make sure you are connected to the Internet", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (UIAlertAction) in
+            print("OK choosen")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default) { (UIAlertAction) in
+            print("Cancel Action Choosed")
+        }
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive) { (UIAlertAction) in
+            print("Delete Item Choosed")
+        }
+        
+        noConnectionAlert.addAction(okAction)
+        noConnectionAlert.addAction(cancelAction)
+        noConnectionAlert.addAction(deleteAction)
+        
+        self.presentViewController(noConnectionAlert, animated: true) { 
+            print("Alert Displayed")
+        }
+    }
+    
     func reachabilityStatusChanged() {
         switch reachabilityStatus {
         case NOACCESS:
             view.backgroundColor = UIColor.redColor()
-           // displayLable.text = "No Internet Connection"
+            self.displayNoConnectionAlert()
+            
         case WIFI:
             view.backgroundColor = UIColor.greenColor()
            // displayLable.text = "WiFi Connection Reachable"
-            self.initApi()
+            if videos.count <= 0 {
+                self.loadAPI()
+            }
         case WWAN:
             view.backgroundColor = UIColor.yellowColor()
-          //  displayLable.text = "Cellular Connection (2G/3G/4G) Reachable"
+            if videos.count <= 0 {
+                self.loadAPI()
+            }
         default:
             return
         }
