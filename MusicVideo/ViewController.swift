@@ -48,20 +48,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reachabilityStatusChanged() {
-        switch reachabilityStatus {
+       /* switch reachabilityStatus {
         case NOACCESS:
-            view.backgroundColor = UIColor.redColor()
-            displayLable.text = "No Internet Connection"
+            //view.backgroundColor = UIColor.redColor()
+            //displayLable.text = "No Internet Connection"
         case WIFI:
-            view.backgroundColor = UIColor.greenColor()
-            displayLable.text = "WiFi Connection Reachable"
+            //view.backgroundColor = UIColor.greenColor()
+            //displayLable.text = "WiFi Connection Reachable"
             self.initApi()
         case WWAN:
-            view.backgroundColor = UIColor.yellowColor()
-            displayLable.text = "Cellular Connection (2G/3G/4G) Reachable"
+            //view.backgroundColor = UIColor.yellowColor()
+           // displayLable.text = "Cellular Connection (2G/3G/4G) Reachable"
         default:
             return
-        }
+        }*/
     }
     
     deinit{

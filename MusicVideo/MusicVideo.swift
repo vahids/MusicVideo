@@ -39,6 +39,10 @@ class Videos{
         return _videoRights
     }
     
+    var videoPrice: String{
+        return _videoPrice
+    }
+    
     var videoArtist: String{
         return _videoArtist
     }

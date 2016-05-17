@@ -78,17 +78,17 @@ class MusicVideoTVC: UITableViewController {
     func reachabilityStatusChanged() {
         switch reachabilityStatus {
         case NOACCESS:
-            view.backgroundColor = UIColor.redColor()
+            //view.backgroundColor = UIColor.redColor()
             self.displayNoConnectionAlert()
             
         case WIFI:
-            view.backgroundColor = UIColor.greenColor()
+            //view.backgroundColor = UIColor.greenColor()
            // displayLable.text = "WiFi Connection Reachable"
             if videos.count <= 0 {
                 self.loadAPI()
             } 
         case WWAN:
-            view.backgroundColor = UIColor.yellowColor()
+           // view.backgroundColor = UIColor.yellowColor()
             if videos.count <= 0 {
                 self.loadAPI()
             }
@@ -118,6 +118,7 @@ class MusicVideoTVC: UITableViewController {
 
     private struct storyboard {
         static let cellReuseIdentifier = "cell"
+        static let seugeResuseIdentifier = "musicDetail"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -164,14 +165,22 @@ class MusicVideoTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == storyboard.seugeResuseIdentifier {
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let video = videos[indexPath.row]
+                let dvc = segue.destinationViewController as! MusicVideoDetailVC
+                
+                dvc.video = video
+            }
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
