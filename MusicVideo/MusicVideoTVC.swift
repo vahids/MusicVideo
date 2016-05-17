@@ -77,7 +77,7 @@ class MusicVideoTVC: UITableViewController {
            // displayLable.text = "WiFi Connection Reachable"
             if videos.count <= 0 {
                 self.loadAPI()
-            }
+            } 
         case WWAN:
             view.backgroundColor = UIColor.yellowColor()
             if videos.count <= 0 {
@@ -106,14 +106,14 @@ class MusicVideoTVC: UITableViewController {
         return videos.count
     }
 
+    private struct storyboard {
+        static let cellReuseIdentifier = "cell"
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! MusicVideTVCell
 
-        let video = videos[indexPath.row]
-        
-        cell.textLabel?.text = video.videoName
-        cell.detailTextLabel?.text = video.videoArtist
+        cell.video = videos[indexPath.row]
 
         return cell
     }

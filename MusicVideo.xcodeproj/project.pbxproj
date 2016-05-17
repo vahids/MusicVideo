@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D23B6A11CEA275400BC0011 /* MusicVideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D23B6A01CEA275400BC0011 /* MusicVideoTVC.swift */; };
+		3D23B6A31CEA4B9000BC0011 /* MusicVideTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D23B6A21CEA4B9000BC0011 /* MusicVideTVCell.swift */; };
 		3DD0FE101CE5FD9B00CFB62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD0FE0F1CE5FD9B00CFB62E /* AppDelegate.swift */; };
 		3DD0FE121CE5FD9B00CFB62E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD0FE111CE5FD9B00CFB62E /* ViewController.swift */; };
 		3DD0FE151CE5FD9B00CFB62E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD0FE131CE5FD9B00CFB62E /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3D23B6A01CEA275400BC0011 /* MusicVideoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTVC.swift; sourceTree = "<group>"; };
+		3D23B6A21CEA4B9000BC0011 /* MusicVideTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideTVCell.swift; sourceTree = "<group>"; };
 		3DD0FE0C1CE5FD9B00CFB62E /* MusicVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD0FE0F1CE5FD9B00CFB62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD0FE111CE5FD9B00CFB62E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				3DD0FE111CE5FD9B00CFB62E /* ViewController.swift */,
 				3D23B6A01CEA275400BC0011 /* MusicVideoTVC.swift */,
+				3D23B6A21CEA4B9000BC0011 /* MusicVideTVCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				3DD0FE441CE6038C00CFB62E /* APIManager.swift in Sources */,
 				3DD0FE121CE5FD9B00CFB62E /* ViewController.swift in Sources */,
 				3DD0FE491CE620C200CFB62E /* MusicVideo.swift in Sources */,
+				3D23B6A31CEA4B9000BC0011 /* MusicVideTVCell.swift in Sources */,
 				3DD0FE101CE5FD9B00CFB62E /* AppDelegate.swift in Sources */,
 				3DD0FE4E1CE7800B00CFB62E /* Reachability.m in Sources */,
 				3DD0FE471CE61F6400CFB62E /* Constants.swift in Sources */,
