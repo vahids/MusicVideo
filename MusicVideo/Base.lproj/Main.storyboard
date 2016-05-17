@@ -87,10 +87,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="599" placeholderIntrinsicHeight="282" translatesAutoresizingMaskIntoConstraints="NO" id="DuG-lO-ON8">
-                                <rect key="frame" x="0.0" y="132" width="599" height="282"/>
+                                <rect key="frame" x="0.0" y="100" width="599" height="282"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre: POP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SS-na-LKU">
-                                <rect key="frame" x="20" y="428" width="209" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Genre: POP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SS-na-LKU">
+                                <rect key="frame" x="20" y="396" width="88" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="17s-bn-TMI"/>
                                     <constraint firstAttribute="width" constant="209" id="gbb-qd-aJD"/>
@@ -100,7 +100,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egu-zx-hkA">
-                                <rect key="frame" x="504" y="429" width="76" height="34"/>
+                                <rect key="frame" x="537" y="473" width="43" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="nuy-PP-7FH"/>
                                     <constraint firstAttribute="height" constant="34" id="oO9-bf-9ye"/>
@@ -110,7 +110,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rights" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LIM-GR-Upi">
-                                <rect key="frame" x="20" y="471" width="560" height="50"/>
+                                <rect key="frame" x="20" y="501" width="560" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lu1-Ue-2s4"/>
                                 </constraints>
@@ -119,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-EZ-ZKt">
-                                <rect key="frame" x="20" y="72" width="560" height="52"/>
+                                <rect key="frame" x="20" y="72" width="560" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="SVR-H3-oM2"/>
                                 </constraints>
@@ -132,22 +132,48 @@
                         <constraints>
                             <constraint firstItem="DuG-lO-ON8" firstAttribute="leading" secondItem="4su-ou-WJ3" secondAttribute="leading" id="1Bp-Bp-4UB"/>
                             <constraint firstItem="DuG-lO-ON8" firstAttribute="top" secondItem="rMF-EZ-ZKt" secondAttribute="bottom" constant="8" id="7Tz-uW-O3R"/>
+                            <constraint firstItem="DuG-lO-ON8" firstAttribute="leading" secondItem="4su-ou-WJ3" secondAttribute="leading" id="7rQ-3Q-8WN"/>
                             <constraint firstItem="LIM-GR-Upi" firstAttribute="top" secondItem="egu-zx-hkA" secondAttribute="bottom" constant="8" symbolic="YES" id="Fsp-C3-2x9"/>
+                            <constraint firstItem="4SS-na-LKU" firstAttribute="top" secondItem="DuG-lO-ON8" secondAttribute="bottom" constant="14" id="GEz-E9-p8X"/>
+                            <constraint firstItem="DuG-lO-ON8" firstAttribute="top" secondItem="feD-0Q-w01" secondAttribute="bottom" constant="8" symbolic="YES" id="HWj-aE-H4E"/>
                             <constraint firstItem="LIM-GR-Upi" firstAttribute="top" secondItem="4SS-na-LKU" secondAttribute="bottom" constant="8" symbolic="YES" id="JA5-Lr-BQm"/>
                             <constraint firstItem="rMF-EZ-ZKt" firstAttribute="leading" secondItem="4su-ou-WJ3" secondAttribute="leading" constant="20" symbolic="YES" id="SOa-T0-Nas"/>
                             <constraint firstAttribute="trailing" secondItem="rMF-EZ-ZKt" secondAttribute="trailing" constant="20" symbolic="YES" id="VA5-fT-lHy"/>
                             <constraint firstItem="LIM-GR-Upi" firstAttribute="leading" secondItem="4su-ou-WJ3" secondAttribute="leading" constant="20" symbolic="YES" id="Vq5-zO-gUU"/>
                             <constraint firstAttribute="trailing" secondItem="DuG-lO-ON8" secondAttribute="trailing" id="Y4z-NR-CZt"/>
+                            <constraint firstItem="2Fw-r9-7ZT" firstAttribute="top" secondItem="DuG-lO-ON8" secondAttribute="bottom" constant="8" symbolic="YES" id="a6N-7A-SGH"/>
                             <constraint firstItem="2Fw-r9-7ZT" firstAttribute="top" secondItem="LIM-GR-Upi" secondAttribute="bottom" constant="35" id="caM-5v-fBm"/>
                             <constraint firstAttribute="trailing" secondItem="DuG-lO-ON8" secondAttribute="trailing" constant="1" id="f9s-bn-dDq"/>
                             <constraint firstAttribute="trailing" secondItem="LIM-GR-Upi" secondAttribute="trailing" constant="20" symbolic="YES" id="i6e-lO-FRd"/>
                             <constraint firstItem="4SS-na-LKU" firstAttribute="leading" secondItem="4su-ou-WJ3" secondAttribute="leading" constant="20" symbolic="YES" id="juY-U7-sey"/>
+                            <constraint firstAttribute="trailing" secondItem="DuG-lO-ON8" secondAttribute="trailing" id="oDV-FA-riW"/>
                             <constraint firstItem="rMF-EZ-ZKt" firstAttribute="top" secondItem="feD-0Q-w01" secondAttribute="bottom" constant="8" symbolic="YES" id="pbW-LV-MJ5"/>
                             <constraint firstAttribute="trailing" secondItem="egu-zx-hkA" secondAttribute="trailing" constant="20" symbolic="YES" id="poH-Is-Grp"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="7rQ-3Q-8WN"/>
+                                <exclude reference="HWj-aE-H4E"/>
                                 <exclude reference="Y4z-NR-CZt"/>
+                                <exclude reference="oDV-FA-riW"/>
+                                <exclude reference="a6N-7A-SGH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="4SS-na-LKU"/>
+                                <exclude reference="egu-zx-hkA"/>
+                                <exclude reference="LIM-GR-Upi"/>
+                                <exclude reference="rMF-EZ-ZKt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1Bp-Bp-4UB"/>
+                                <exclude reference="7Tz-uW-O3R"/>
+                                <include reference="7rQ-3Q-8WN"/>
+                                <include reference="HWj-aE-H4E"/>
+                                <exclude reference="f9s-bn-dDq"/>
+                                <include reference="oDV-FA-riW"/>
+                                <include reference="a6N-7A-SGH"/>
                             </mask>
                         </variation>
                     </view>
@@ -176,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGN-VC-wP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="56"/>
+            <point key="canvasLocation" x="2439" y="55.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ydD-DY-jPU">
