@@ -94,11 +94,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="599" placeholderIntrinsicHeight="282" translatesAutoresizingMaskIntoConstraints="NO" id="DuG-lO-ON8">
-                                <rect key="frame" x="0.0" y="100" width="599" height="282"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="599" placeholderIntrinsicHeight="282" translatesAutoresizingMaskIntoConstraints="NO" id="DuG-lO-ON8">
+                                <rect key="frame" x="0.0" y="132" width="599" height="282"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Genre: POP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SS-na-LKU">
-                                <rect key="frame" x="20" y="396" width="88" height="97"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Genre: POP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SS-na-LKU">
+                                <rect key="frame" x="20" y="428" width="209" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="17s-bn-TMI"/>
                                     <constraint firstAttribute="width" constant="209" id="gbb-qd-aJD"/>
@@ -107,8 +107,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$1.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egu-zx-hkA">
-                                <rect key="frame" x="537" y="473" width="43" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egu-zx-hkA">
+                                <rect key="frame" x="504" y="429" width="76" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="nuy-PP-7FH"/>
                                     <constraint firstAttribute="height" constant="34" id="oO9-bf-9ye"/>
@@ -117,8 +117,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rights" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LIM-GR-Upi">
-                                <rect key="frame" x="20" y="501" width="560" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rights" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LIM-GR-Upi">
+                                <rect key="frame" x="20" y="471" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lu1-Ue-2s4"/>
                                 </constraints>
@@ -126,8 +126,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Video Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-EZ-ZKt">
-                                <rect key="frame" x="20" y="72" width="560" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-EZ-ZKt">
+                                <rect key="frame" x="20" y="72" width="560" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="SVR-H3-oM2"/>
                                 </constraints>
@@ -212,11 +212,11 @@
             </objects>
             <point key="canvasLocation" x="2337" y="28"/>
         </scene>
-        <!--Table View Controller-->
+        <!--SettingsTVC-->
         <scene sceneID="Six-Cl-g1W">
             <objects>
-                <tableViewController id="HZA-1k-AKb" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="GoK-Oh-txU">
+                <tableViewController id="HZA-1k-AKb" customClass="SettingsTVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="GoK-Oh-txU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -368,6 +368,16 @@
                             <outlet property="delegate" destination="HZA-1k-AKb" id="8O6-5o-ZI0"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="APICount" destination="Vw6-TB-4Z1" id="P6B-AI-XaA"/>
+                        <outlet property="aboutDisplay" destination="aza-XL-yXA" id="sAA-18-zlb"/>
+                        <outlet property="bestImageQualityDisplay" destination="3WD-HV-YUE" id="049-pP-Dxn"/>
+                        <outlet property="bestImageQualitySwitch" destination="gj9-AR-15R" id="CTS-Yz-41s"/>
+                        <outlet property="feedbackDisplay" destination="7lN-vH-EgS" id="woR-iR-4yO"/>
+                        <outlet property="securityDisplay" destination="7pR-N3-OwD" id="yiN-h5-hS0"/>
+                        <outlet property="sliderCount" destination="RjZ-sA-QlB" id="bSV-73-imx"/>
+                        <outlet property="touchID" destination="OAi-oy-I21" id="AwC-Vr-sM6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwU-r9-nBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
