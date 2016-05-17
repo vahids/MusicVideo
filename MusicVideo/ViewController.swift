@@ -41,9 +41,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         print(reachabilityStatus)
         
-        for (index, item) in videos.enumerate() {
+       /* for (index, item) in videos.enumerate() {
             print("\(index). Name: \(item.videoName)")
-        }
+        }*/
         
     }
     

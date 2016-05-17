@@ -36,9 +36,9 @@ class MusicVideoTVC: UITableViewController {
         
         print(reachabilityStatus)
         
-        for (index, item) in videos.enumerate() {
+      /*  for (index, item) in videos.enumerate() {
             print("\(index). Name: \(item.videoName)")
-        }
+        }*/
         
     }
     

@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        print(reachabilityStatus)
+        //print(reachabilityStatus)
         NSNotificationCenter.defaultCenter().postNotificationName("ReachStatusChanged", object: nil)
     }
     
