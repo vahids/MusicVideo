@@ -21,6 +21,10 @@ class MusicVideTVCell: UITableViewCell {
     }
     
     func updateCell(){
+        
+        musicTitle.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        musicRank.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        
         musicTitle.text = video?.videoName
         musicRank.text = "\(video!.videoRank)"
         

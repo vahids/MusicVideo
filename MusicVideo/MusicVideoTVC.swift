@@ -16,6 +16,10 @@ class MusicVideoTVC: UITableViewController {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reachabilityStatusChanged), name: "ReachStatusChanged", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.perefedFontChange), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
+        
         self.reachabilityStatusChanged()
         
         loadAPI()
@@ -40,6 +44,11 @@ class MusicVideoTVC: UITableViewController {
             print("\(index). Name: \(item.videoName)")
         }*/
         
+    }
+    
+    func perefedFontChange(){
+        
+        print("We Preferred Font has Changed")
     }
     
     func displayNoConnectionAlert(){
@@ -90,6 +99,7 @@ class MusicVideoTVC: UITableViewController {
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReachStatusChanged", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
 
     
