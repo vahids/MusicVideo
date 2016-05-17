@@ -164,8 +164,8 @@
 		3DD0FE411CE5FEAC00CFB62E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3DD0FE181CE5FD9B00CFB62E /* LaunchScreen.storyboard */,
 				3DD0FE131CE5FD9B00CFB62E /* Main.storyboard */,
+				3DD0FE181CE5FD9B00CFB62E /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";

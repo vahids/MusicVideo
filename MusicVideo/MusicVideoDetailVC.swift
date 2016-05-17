@@ -18,6 +18,8 @@ class MusicVideoDetailVC: UIViewController {
     @IBOutlet weak var videoRights: UILabel!
     
     override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.perefedFontChange), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         super.viewDidLoad()
         print("YES")
         videoName.text = video?.videoName
@@ -35,7 +37,20 @@ class MusicVideoDetailVC: UIViewController {
         }
         
         
+        
+        
     }
+    
+    func perefedFontChange(){
+        videoName.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        videoPrice.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        videoGenre.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        videoRights.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        
+        
+        print("We Preferred Font has Changed")
+    }
+    
     
     //MARK: Actions
 
@@ -43,6 +58,10 @@ class MusicVideoDetailVC: UIViewController {
     }
     
     @IBAction func sharePress(sender: AnyObject) {
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
 
 }
