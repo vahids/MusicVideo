@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingsTVC: UITableViewController {
+class SettingsTVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var aboutDisplay: UILabel!
     @IBOutlet weak var feedbackDisplay: UILabel!
@@ -70,15 +71,72 @@ class SettingsTVC: UITableViewController {
         
         print("We Preferred Font has Changed")
     }
-
-    deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
-    }
     
     @IBAction func sliderChange(sender: UISlider) {
        // APICount.text = "\(sliderCount.value as Int)" 
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(Int(sliderCount.value), forKey: "SliderValue")
         APICount.text = "\(Int(sliderCount.value))"
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            
+            let mailComposeVC = configureMail()
+            
+            if MFMailComposeViewController.canSendMail() {
+                self.presentViewController(mailComposeVC, animated: true, completion: nil)
+            } else {
+                mailAlert()
+                // No email account Setup on phone
+            }
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+    
+    func configureMail() -> MFMailComposeViewController{
+        
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.mailComposeDelegate = self
+        mailComposeVC.setToRecipients(["vahidgiga@gmail.com"])
+        mailComposeVC.setSubject("Music Video App Feedback")
+        mailComposeVC.setMessageBody("Hi Vahid, \n\nI would like to share following feedback... \n", isHTML: false)
+        
+        return mailComposeVC
+    }
+    
+    func mailAlert(){
+        
+        let alertController = UIAlertController(title: "Alert", message: "No Email account setup for Phone", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { action -> Void in
+            //
+        }
+        
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Mail Cancelled")
+        case MFMailComposeResultSaved.rawValue:
+            print("Mail Saved")
+        case MFMailComposeResultFailed.rawValue:
+            print("Mail Failed")
+        case MFMailComposeResultSent.rawValue:
+            print("Mail Sent")
+        default:
+            print("Unknown Issue")
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
 }
