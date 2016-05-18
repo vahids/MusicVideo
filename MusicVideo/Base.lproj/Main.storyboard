@@ -242,6 +242,9 @@
                                                 <constraint firstItem="aza-XL-yXA" firstAttribute="top" secondItem="RfA-nP-izA" secondAttribute="topMargin" constant="18" id="x1e-zD-R8f"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sBP-pu-7Sk" kind="show" id="wRa-Zv-ntA"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tko-4f-woo">
                                         <rect key="frame" x="0.0" y="139" width="600" height="75"/>
@@ -388,6 +391,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwU-r9-nBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1644" y="754"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6QL-VJ-uUi">
+            <objects>
+                <viewController id="sBP-pu-7Sk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xxu-Kw-XsN"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Y4-nD-HIX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7PW-BR-zHC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO4-BN-XDl">
+                                <rect key="frame" x="20" y="72" width="560" height="203"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">It's a top iTunes music video app. In setting you can change how many top you would like to see and you can make it secure to prevent shared without your permissions.  I'm a programmer that start coding for iOS and It's my second app. It's should be a nice and clean. Thanks to Meachel that helped me a lot to make this app.</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="0.047576121794871806" green="0.047576121794871806" blue="0.047576121794871806" alpha="0.8539331896551724" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="29" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Gx-vT-oeK">
+                                <rect key="frame" x="20" y="465" width="231" height="83"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LFG-QO-51e">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="83"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ5-RD-Lyo">
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tel: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2g-oN-0U0">
+                                                <rect key="frame" x="0.0" y="33" width="27" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gh-En-XIV">
+                                                <rect key="frame" x="0.0" y="66" width="51" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-d7-0FS">
+                                        <rect key="frame" x="71" y="0.0" width="160" height="83"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vahid@mail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pd-eI-y2P">
+                                                <rect key="frame" x="0.0" y="0.0" width="106" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+98-917-104-5975" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCn-dS-lX9">
+                                                <rect key="frame" x="0.0" y="33" width="126" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://github.com/vahids" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9T-sq-dDo">
+                                                <rect key="frame" x="0.0" y="66" width="160" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m7t-Pi-TPH">
+                                <rect key="frame" x="110" y="154" width="240" height="5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lO4-BN-XDl" firstAttribute="leading" secondItem="7PW-BR-zHC" secondAttribute="leading" constant="20" symbolic="YES" id="07H-HV-1a6"/>
+                            <constraint firstItem="7Y4-nD-HIX" firstAttribute="top" secondItem="2Gx-vT-oeK" secondAttribute="bottom" constant="8" symbolic="YES" id="DyD-XN-igm"/>
+                            <constraint firstItem="lO4-BN-XDl" firstAttribute="top" secondItem="Xxu-Kw-XsN" secondAttribute="bottom" constant="8" symbolic="YES" id="nPj-sV-GEX"/>
+                            <constraint firstItem="2Gx-vT-oeK" firstAttribute="leading" secondItem="7PW-BR-zHC" secondAttribute="leading" constant="20" symbolic="YES" id="vdM-CX-mGv"/>
+                            <constraint firstAttribute="trailing" secondItem="lO4-BN-XDl" secondAttribute="trailing" constant="20" symbolic="YES" id="wgh-JV-Z4W"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcK-YI-fbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="754"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ydD-DY-jPU">
