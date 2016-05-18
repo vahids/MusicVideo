@@ -272,6 +272,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAi-oy-I21">
                                                     <rect key="frame" x="543" y="21" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="touchIDClick:" destination="HZA-1k-AKb" eventType="valueChanged" id="V0f-Bd-pWV"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pR-N3-OwD">
                                                     <rect key="frame" x="8" y="28" width="54" height="17"/>
@@ -350,6 +353,9 @@
                                                             <exclude reference="72G-ev-2z9"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="sliderChange:" destination="HZA-1k-AKb" eventType="valueChanged" id="mDG-Mm-ZS6"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
