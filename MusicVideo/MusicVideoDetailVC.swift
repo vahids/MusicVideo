@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class MusicVideoDetailVC: UIViewController {
 
@@ -36,9 +38,6 @@ class MusicVideoDetailVC: UIViewController {
             videoImage.image = UIImage(named: "ImageNotAvailable")
         }
         
-        
-        
-        
     }
     
     func perefedFontChange(){
@@ -55,6 +54,17 @@ class MusicVideoDetailVC: UIViewController {
     //MARK: Actions
 
     @IBAction func playPress(sender: AnyObject) {
+        
+        let url = NSURL(string: video!.videoUrl)
+        let player = AVPlayer(URL: url!)
+        let playerVC = AVPlayerViewController()
+        
+        playerVC.player = player
+        
+        self.presentViewController(playerVC, animated: true) { 
+            playerVC.player?.play()
+        }
+        
     }
     
     @IBAction func sharePress(sender: AnyObject) {
