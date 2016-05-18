@@ -11,6 +11,7 @@ import UIKit
 class MusicVideoTVC: UITableViewController {
 
     var videos = [Videos]()
+    var limit: String = "10"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,33 @@ class MusicVideoTVC: UITableViewController {
         loadAPI()
     }
     
+    
+    @IBAction func refresh(sender: UIRefreshControl) {
+        refreshControl?.endRefreshing()
+        loadAPI()
+    }
+    
+    
+    func getAPICount() {
+        
+        if  let count = NSUserDefaults.standardUserDefaults().objectForKey("SliderValue") {
+            self.limit = "\(count)"
+        }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "E, dd MM yyyy HH:mm:ss"
+        let refreshDate = formatter.stringFromDate(NSDate())
+        print("Refresh Date: \(refreshDate)")
+        
+        refreshControl?.attributedTitle = NSAttributedString(string: refreshDate)
+    }
+    
     func loadAPI(){
+        
+        getAPICount()
+        
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json", completion: self.didLoadData)
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=\(limit)/json", completion: self.didLoadData)
     }
     
     func didLoadData(videos: [Videos]){
@@ -36,6 +61,10 @@ class MusicVideoTVC: UITableViewController {
         //        }
         
         self.videos = videos
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
+        
+        title = "The iTunes Top \(limit) Music Videos"
         tableView.reloadData()
         
         print(reachabilityStatus)
