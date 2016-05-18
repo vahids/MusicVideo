@@ -16,7 +16,9 @@ class SettingsTVC: UITableViewController {
     @IBOutlet weak var touchID: UISwitch!
     @IBOutlet weak var bestImageQualityDisplay: UILabel!
     @IBOutlet weak var bestImageQualitySwitch: UISwitch!
+    @IBOutlet weak var numberOfMusicVideo: UILabel!
     @IBOutlet weak var APICount: UILabel!
+    @IBOutlet weak var dragSliderText: UILabel!
     @IBOutlet weak var sliderCount: UISlider!
     
     override func viewDidLoad() {
@@ -57,15 +59,14 @@ class SettingsTVC: UITableViewController {
         
     }
     
-    
-    
-    
     func perefedFontChange(){
         feedbackDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         securityDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         bestImageQualityDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         APICount.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         aboutDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        dragSliderText.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        numberOfMusicVideo.font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
         
         print("We Preferred Font has Changed")
     }

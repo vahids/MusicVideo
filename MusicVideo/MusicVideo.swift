@@ -20,11 +20,16 @@ class Videos{
     private var _videoTitle: String
     private var _videoGenre: String
     private var _videoReleaseDate: String
+    private var _videoiTunesLink: String
     
     var videoImageData: NSData?
     
     var videoName: String{
         return _videoName
+    }
+    
+    var videoiTunesLink: String{
+        return _videoiTunesLink
     }
     
     var videoImageUrl: String{
@@ -143,7 +148,16 @@ class Videos{
             self._videoPrice = ""
         }
         
-        
+        // iTunes Link
+        if let link = data["link"] as? JSONArray,
+                perAttrib = link[0] as? JSONDictionaty,
+                attrib = perAttrib["attributes"] as? JSONDictionaty,
+                href = attrib["href"] as? String {
+            
+            self._videoiTunesLink = href
+        } else {
+            self._videoiTunesLink = ""
+        }
     }
     
 }

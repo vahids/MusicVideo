@@ -332,14 +332,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Image Quality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR0-Az-1Sm">
-                                                    <rect key="frame" x="8" y="28" width="122" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw6-TB-4Z1">
+                                                    <rect key="frame" x="566" y="28" width="26" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw6-TB-4Z1">
-                                                    <rect key="frame" x="566" y="28" width="26" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Music Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR0-Az-1Sm">
+                                                    <rect key="frame" x="8" y="28" width="159" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -404,7 +404,9 @@
                         <outlet property="aboutDisplay" destination="aza-XL-yXA" id="sAA-18-zlb"/>
                         <outlet property="bestImageQualityDisplay" destination="3WD-HV-YUE" id="049-pP-Dxn"/>
                         <outlet property="bestImageQualitySwitch" destination="gj9-AR-15R" id="CTS-Yz-41s"/>
+                        <outlet property="dragSliderText" destination="L9Q-O3-Lle" id="s6y-So-BVQ"/>
                         <outlet property="feedbackDisplay" destination="7lN-vH-EgS" id="woR-iR-4yO"/>
+                        <outlet property="numberOfMusicVideo" destination="xR0-Az-1Sm" id="VDa-lr-gq1"/>
                         <outlet property="securityDisplay" destination="7pR-N3-OwD" id="yiN-h5-hS0"/>
                         <outlet property="sliderCount" destination="RjZ-sA-QlB" id="bSV-73-imx"/>
                         <outlet property="touchID" destination="OAi-oy-I21" id="AwC-Vr-sM6"/>
