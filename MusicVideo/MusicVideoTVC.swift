@@ -8,9 +8,14 @@
 
 import UIKit
 
-class MusicVideoTVC: UITableViewController {
+class MusicVideoTVC: UITableViewController, UISearchResultsUpdating {
 
     var videos = [Videos]()
+    
+    var filterSearch = [Videos]()
+    
+    let resultSarchController = UISearchController(searchResultsController: nil)
+    
     var limit: String = "10"
     
     override func viewDidLoad() {
@@ -20,6 +25,7 @@ class MusicVideoTVC: UITableViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.perefedFontChange), name: UIContentSizeCategoryDidChangeNotification, object: nil)
         
+        resultSarchController.searchResultsUpdater = self
         
         self.reachabilityStatusChanged()
         
@@ -29,7 +35,12 @@ class MusicVideoTVC: UITableViewController {
     
     @IBAction func refresh(sender: UIRefreshControl) {
         refreshControl?.endRefreshing()
-        loadAPI()
+        
+        if resultSarchController.active {
+            refreshControl?.attributedTitle = NSAttributedString(string: "No refresh allowed in search")
+        } else {
+            loadAPI()
+        }
     }
     
     
@@ -65,6 +76,16 @@ class MusicVideoTVC: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
         
         title = "The iTunes Top \(limit) Music Videos"
+        
+        definesPresentationContext = true
+        resultSarchController.dimsBackgroundDuringPresentation = false
+        resultSarchController.searchBar.placeholder = "Search for Artist"
+        resultSarchController.searchBar.searchBarStyle = UISearchBarStyle.Prominent
+        
+        tableView.tableHeaderView = resultSarchController.searchBar
+        
+        
+        
         tableView.reloadData()
         
         print(reachabilityStatus)
@@ -141,7 +162,12 @@ class MusicVideoTVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if resultSarchController.active {
+            print("Number of rows in section: \(filterSearch.count)")
+            return filterSearch.count
+        }
+        print("NO")
+        
         return videos.count
     }
 
@@ -153,47 +179,15 @@ class MusicVideoTVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! MusicVideTVCell
 
-        cell.video = videos[indexPath.row]
+        if resultSarchController.active {
+            cell.video = filterSearch[indexPath.row]
+        } else {
+            cell.video = videos[indexPath.row]
+        }
 
         return cell
     }
  
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 
@@ -201,7 +195,15 @@ class MusicVideoTVC: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == storyboard.seugeResuseIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow{
-                let video = videos[indexPath.row]
+                
+                var video: Videos
+                
+                if resultSarchController.active {
+                    video = filterSearch[indexPath.row]
+                } else {
+                    video = videos[indexPath.row]
+                }
+                
                 let dvc = segue.destinationViewController as! MusicVideoDetailVC
                 
                 dvc.video = video
@@ -211,5 +213,21 @@ class MusicVideoTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+       
+        searchController.searchBar.text!.lowercaseString
+        filterSearch(searchController.searchBar.text!)
+    }
+    
+    func filterSearch(searchText: String){
+        filterSearch = videos.filter {
+            videos in
+                return videos.videoArtist.lowercaseString.containsString(searchText.lowercaseString) || videos.videoName.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        tableView.reloadData()
+    }
+    
+
 
 }
